@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<base href="/hotelpms/public/index.php">
 <title>Rooms — Hotel HMS</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="/hotelpms/assets/css/theme.css">
+<link rel="stylesheet" href="/hotelpms/assets/css/theme.css">
 <style>
-  body { background:#f4f6f9; }
   .status-badge { font-size:.75rem; padding:.35em .65em; border-radius:.4rem; font-weight:600; }
   .badge-Clean      { background:#d1fae5; color:#065f46; }
   .badge-Occupied   { background:#fef3c7; color:#92400e; }
@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="container-fluid py-4">
-
+ 
   <!-- Header -->
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h4 class="fw-bold mb-0"><i class="bi bi-building me-2 text-primary"></i>Room Management</h4>
@@ -28,7 +28,7 @@
       <i class="bi bi-plus-lg me-1"></i> Add Room
     </a>
   </div>
-
+ 
   <!-- Flash messages -->
   <?php if (!empty($_GET['msg'])): ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -41,11 +41,11 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
   <?php endif; ?>
-
+ 
   <!-- Search / Filter -->
   <div class="card mb-4 border-0 shadow-sm">
     <div class="card-body">
-      <form method="GET" class="row g-2 align-items-end">
+      <form method="GET" action="/hotelpms/public/index.php" class="row g-2 align-items-end">
         <input type="hidden" name="module" value="rooms">
         <input type="hidden" name="action" value="index">
         <div class="col-md-3">
@@ -83,7 +83,7 @@
       </form>
     </div>
   </div>
-
+ 
   <!-- Table -->
   <div class="card border-0 shadow-sm">
     <div class="card-body p-0">
@@ -104,7 +104,7 @@
             <tr><td colspan="7" class="text-center text-muted py-4">No rooms found.</td></tr>
           <?php else: foreach ($rooms as $room): ?>
             <tr>
-              <td class="fw-semibold"><?= htmlspecialchars($room['room_number']) ?></td>
+              <td class="price-highlight"><?= htmlspecialchars($room['room_number']) ?></td>
               <td><?= $room['room_type'] ?></td>
               <td><?= $room['floor_number'] ?></td>
               <td><?= $room['capacity'] ?></td>
@@ -131,8 +131,9 @@
       </table>
     </div>
   </div>
-
+ 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+</div>
