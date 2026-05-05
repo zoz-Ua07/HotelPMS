@@ -14,7 +14,7 @@ class RoomController {
     // ── MAIN DISPATCHER ───────────────────────────────────────────────────────
     public function handleRequest(): void {
         $action = $_GET['action'] ?? 'index';
-         require_once __DIR__ . '/../../config/auth.php';
+         require_once __DIR__ . '/../../middleware/auth.php';
     requireAuth(['Manager','FrontDesk','SalesManager']);
 
         // AJAX availability endpoint — returns JSON, no view needed
