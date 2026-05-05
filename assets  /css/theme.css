@@ -1,1 +1,353 @@
+/* ============================================================
+   Lumière PMS — Unified Theme
+   Matches the Login page palette across all Bootstrap views
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── CSS Variables ───────────────────────────────────────── */
+:root {
+  --gold:        #C9A84C;
+  --gold-light:  #E8C97A;
+  --gold-dim:    rgba(201, 168, 76, .15);
+  --deep:        #0A0A0F;
+  --panel:       #12121A;
+  --panel-raised:#1A1A26;
+  --border:      #2A2A3A;
+  --border-light:#353548;
+  --text:        #E8E4DC;
+  --muted:       #7A7A8E;
+  --danger:      #E87070;
+  --success:     #6EC99A;
+  --warning:     #E8C97A;
+  --info:        #7AB8E8;
+}
+
+/* ── Base ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--deep) !important;
+  color: var(--text) !important;
+  min-height: 100%;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: .3px;
+}
+
+.fw-bold   { font-weight: 600 !important; }
+.fw-semibold { font-weight: 500 !important; }
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-light); }
+
+.text-muted  { color: var(--muted) !important; }
+.text-primary { color: var(--gold) !important; }
+.text-warning { color: var(--gold) !important; }
+.text-success { color: var(--success) !important; }
+.text-danger  { color: var(--danger) !important; }
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  color: var(--text);
+}
+
+.card-header {
+  background: var(--panel) !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text);
+}
+
+.card-body  { color: var(--text); }
+.card-footer {
+  background: var(--panel) !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 12px rgba(0,0,0,.45) !important;
+}
+
+/* ── Table ───────────────────────────────────────────────── */
+.table {
+  color: var(--text) !important;
+  --bs-table-bg: transparent;
+  --bs-table-striped-bg: rgba(255,255,255,.02);
+  --bs-table-hover-bg: rgba(201,168,76,.06);
+  --bs-table-border-color: var(--border);
+}
+
+.table thead th,
+.table-light {
+  background: var(--panel-raised) !important;
+  color: var(--muted) !important;
+  border-bottom: 1px solid var(--border) !important;
+  font-size: .72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.table td, .table th {
+  border-color: var(--border) !important;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(201, 168, 76, .05) !important;
+  color: var(--text) !important;
+}
+
+/* ── Forms ───────────────────────────────────────────────── */
+.form-control,
+.form-select {
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  border-radius: 3px !important;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.form-control::placeholder { color: var(--muted) !important; }
+
+.form-control:focus,
+.form-select:focus {
+  background: rgba(255,255,255,.06) !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(201,168,76,.12) !important;
+  color: var(--text) !important;
+  outline: none;
+}
+
+.form-select option {
+  background: var(--panel);
+  color: var(--text);
+}
+
+.form-label {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+
+/* Primary → Gold */
+.btn-primary,
+.btn-primary:visited {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%) !important;
+  background-size: 200% 100% !important;
+  background-position: 0% 0% !important;
+  border: none !important;
+  color: #0A0A0F !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  border-radius: 3px !important;
+  transition: background-position .4s, transform .15s, box-shadow .2s !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-position: 100% 0% !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(201,168,76,.25) !important;
+  color: #0A0A0F !important;
+}
+.btn-primary:active { transform: translateY(0) !important; }
+
+/* Outline Primary */
+.btn-outline-primary {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+  font-weight: 500;
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background: var(--gold-dim) !important;
+  color: var(--gold-light) !important;
+  border-color: var(--gold-light) !important;
+}
+
+/* Warning → amber gold */
+.btn-warning {
+  background: rgba(201,168,76,.18) !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  border-radius: 3px !important;
+  font-weight: 500;
+}
+.btn-warning:hover, .btn-warning:focus {
+  background: var(--gold-dim) !important;
+  color: var(--gold-light) !important;
+}
+
+/* Success */
+.btn-success {
+  background: rgba(110,201,154,.15) !important;
+  border: 1px solid var(--success) !important;
+  color: var(--success) !important;
+  border-radius: 3px !important;
+}
+.btn-success:hover {
+  background: rgba(110,201,154,.25) !important;
+  color: var(--success) !important;
+}
+
+/* Danger */
+.btn-danger {
+  background: rgba(232,112,112,.15) !important;
+  border: 1px solid var(--danger) !important;
+  color: var(--danger) !important;
+  border-radius: 3px !important;
+}
+.btn-danger:hover {
+  background: rgba(232,112,112,.25) !important;
+  color: var(--danger) !important;
+}
+
+/* Outline Secondary */
+.btn-outline-secondary {
+  border-color: var(--border-light) !important;
+  color: var(--muted) !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+}
+.btn-outline-secondary:hover {
+  background: rgba(255,255,255,.05) !important;
+  color: var(--text) !important;
+  border-color: var(--muted) !important;
+}
+
+/* Outline Danger */
+.btn-outline-danger {
+  border-color: rgba(232,112,112,.5) !important;
+  color: var(--danger) !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+}
+.btn-outline-danger:hover {
+  background: rgba(232,112,112,.12) !important;
+}
+
+/* Outline Warning */
+.btn-outline-warning {
+  border-color: rgba(201,168,76,.5) !important;
+  color: var(--gold) !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+}
+.btn-outline-warning:hover {
+  background: var(--gold-dim) !important;
+}
+
+/* ── Alert ───────────────────────────────────────────────── */
+.alert {
+  border-radius: 4px !important;
+  font-size: 13px;
+}
+.alert-success {
+  background: rgba(110,201,154,.1) !important;
+  border-color: rgba(110,201,154,.3) !important;
+  color: var(--success) !important;
+}
+.alert-danger {
+  background: rgba(232,112,112,.1) !important;
+  border-color: rgba(232,112,112,.3) !important;
+  color: var(--danger) !important;
+}
+.alert-warning {
+  background: rgba(201,168,76,.1) !important;
+  border-color: rgba(201,168,76,.3) !important;
+  color: var(--gold-light) !important;
+}
+.alert-info {
+  background: rgba(122,184,232,.1) !important;
+  border-color: rgba(122,184,232,.3) !important;
+  color: var(--info) !important;
+}
+.btn-close {
+  filter: invert(1) opacity(.5);
+}
+
+/* ── Badges ──────────────────────────────────────────────── */
+/* Reservation states */
+.state-badge { font-size:.72rem; padding:.3em .65em; border-radius:.4rem; font-weight:700; }
+.state-Inquiry     { background:rgba(122,184,232,.15); color:var(--info); }
+.state-Confirmed   { background:rgba(110,201,154,.15); color:var(--success); }
+.state-CheckedIn   { background:rgba(201,168,76,.15);  color:var(--gold-light); }
+.state-CheckedOut  { background:rgba(180,150,232,.15); color:#B496E8; }
+.state-FolioClosed { background:rgba(122,122,142,.15); color:var(--muted); }
+.state-NoShow      { background:rgba(232,112,112,.15); color:var(--danger); }
+.state-Cancelled   { background:rgba(232,112,200,.15); color:#E878C8; }
+
+/* Room status badges */
+.status-badge { font-size:.75rem; padding:.35em .65em; border-radius:.4rem; font-weight:600; }
+.badge-Clean      { background:rgba(110,201,154,.15); color:var(--success); }
+.badge-Occupied   { background:rgba(201,168,76,.15);  color:var(--gold-light); }
+.badge-Dirty      { background:rgba(232,112,112,.15); color:var(--danger); }
+.badge-Ready      { background:rgba(122,184,232,.15); color:var(--info); }
+.badge-OutOfOrder { background:rgba(122,122,142,.15); color:var(--muted); }
+.badge-InCleaning { background:rgba(180,150,232,.15); color:#B496E8; }
+.badge-Inspecting { background:rgba(232,112,200,.15); color:#E878C8; }
+
+/* Bootstrap .badge overrides */
+.bg-success-subtle { background: rgba(110,201,154,.15) !important; }
+.text-success       { color: var(--success) !important; }
+
+/* ── Misc Bootstrap overrides ────────────────────────────── */
+.bg-white,
+.bg-light { background: var(--panel) !important; }
+
+.border-0 { border: none !important; }
+
+.spinner-border {
+  color: var(--gold);
+}
+
+/* Room card (availability picker) */
+#availability-results .room-card {
+  background: rgba(255,255,255,.03) !important;
+  border-color: var(--border) !important;
+  color: var(--text);
+  transition: border-color .15s, background .15s;
+  cursor: pointer;
+}
+#availability-results .room-card:hover,
+#availability-results .room-card.selected {
+  border-color: var(--gold) !important;
+  background: rgba(201,168,76,.07) !important;
+}
+#availability-results .fw-bold { color: var(--gold) !important; }
+
+/* ── Container / Layout ──────────────────────────────────── */
+.container-fluid,
+.container {
+  /* subtle crosshatch texture matching login panel */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ── Gold accent line on active / selected elements ──────── */
+.price-highlight { color: var(--gold-light); font-weight: 600; }
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--deep); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
