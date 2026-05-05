@@ -17,7 +17,7 @@ class ReservationController {
     // ── DISPATCHER ────────────────────────────────────────────────────────────
     public function handleRequest(): void {
         $action = $_GET['action'] ?? 'index';
-         require_once __DIR__ . '/../../config/auth.php';
+         require_once __DIR__ . '/../../middleware/auth.php';
     requireAuth(['Manager','FrontDesk','SalesManager','RevenueManager']);
 
         match ($action) {
@@ -196,3 +196,4 @@ class ReservationController {
             ->fetchAll();
     }
 }
+
